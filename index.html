@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Study Dashboard</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container py-4">
+    <header class="mb-4">
+      <h1><i class="fa-solid fa-book-open"></i> Study Dashboard</h1>
+      <p id="date"></p>
+    </header>
+
+    <div class="row g-3">
+      <section class="col-lg-7" id="timer">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="h5 mb-3"><i class="fa-solid fa-stopwatch"></i> Study timer</h2>
+            <div class="d-flex flex-wrap align-items-center gap-4">
+              <div class="ring">
+                <svg viewBox="0 0 120 120" aria-hidden="true">
+                  <circle class="ring-bg" cx="60" cy="60" r="52"></circle>
+                  <circle class="ring-fg" id="arc" cx="60" cy="60" r="52"></circle>
+                </svg>
+                <div class="ring-text">
+                  <div id="clock">00:00:00</div>
+                  <div class="muted" id="percent">0% of daily goal</div>
+                </div>
+              </div>
+
+              <div class="controls">
+                <label class="form-label" for="subject">Subject</label>
+                <select class="form-select mb-2" id="subject"></select>
+
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" id="newSubject" placeholder="Add a new subject" aria-label="New subject">
+                  <button class="btn btn-ghost" id="addSubjectBtn">Add</button>
+                </div>
+
+                <div class="d-flex gap-2 mb-3">
+                  <button class="btn btn-main" id="startBtn">Start</button>
+                  <button class="btn btn-ghost" id="stopBtn">Stop and save</button>
+                </div>
+
+                <div class="d-flex align-items-center gap-2">
+                  <label class="muted" for="goal">Daily goal</label>
+                  <input type="number" class="form-control goal-input" id="goal" min="10" step="10">
+                  <span class="muted">minutes</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="col-lg-5" id="today">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="h5 mb-3"><i class="fa-solid fa-clock-rotate-left"></i> Studied today</h2>
+            <div class="big" id="total">0h 0m</div>
+            <ul class="list-unstyled mt-3 mb-0" id="sessionList"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="col-12" id="week">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="h5 mb-3"><i class="fa-solid fa-chart-column"></i> Last 7 days</h2>
+            <div class="bars" id="bars"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="col-lg-7" id="timetable">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="h5 mb-3"><i class="fa-solid fa-calendar-week"></i> Timetable</h2>
+            <div class="tabs" id="tabs"></div>
+            <div class="row g-2">
+              <div class="col-6 col-md-3">
+                <input type="time" class="form-control" id="classStart" aria-label="Start time">
+              </div>
+              <div class="col-6 col-md-3">
+                <input type="time" class="form-control" id="classEnd" aria-label="End time">
+              </div>
+              <div class="col-12 col-md-4">
+                <input type="text" class="form-control" id="className" placeholder="Class or subject" aria-label="Class or subject">
+              </div>
+              <div class="col-12 col-md-2 d-grid">
+                <button class="btn btn-main" id="addClassBtn">Add</button>
+              </div>
+            </div>
+            <ul class="list-unstyled mt-3 mb-0" id="classList"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="col-lg-5" id="tomorrow">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="h5 mb-3"><i class="fa-solid fa-list-check"></i> Tomorrow I will <span class="pill" id="tomorrowDate"></span></h2>
+            <div class="input-group">
+              <input type="text" class="form-control" id="taskInput" placeholder="What do you want to get done?" aria-label="New task">
+              <button class="btn btn-main" id="addTaskBtn">Add</button>
+            </div>
+            <ul class="list-unstyled mt-3 mb-0" id="taskList"></ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
