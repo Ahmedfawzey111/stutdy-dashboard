@@ -1,0 +1,9 @@
+{
+  "name": "Student Dashboard",
+  "short_name": "Study Dashboard",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4f46e5",
+  "description": "لوحة تحكم الطالب لتنظيم أوقات الدراسة وتتبع المهام اليومية"
+}
